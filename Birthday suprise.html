@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Surprise 💖</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Comic Sans MS",cursive;
+}
+
+
+body{
+
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#ffd6e8,#fff7cc);
+
+}
+
+
+
+.page{
+
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+animation:fade 1s;
+
+}
+
+
+.active{
+
+display:flex;
+
+}
+
+
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:scale(.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+
+
+h1{
+
+color:#ff4081;
+font-size:42px;
+text-shadow:2px 2px white;
+
+}
+
+
+
+p{
+
+font-size:21px;
+color:#6a1b4d;
+margin:20px;
+
+}
+<audio id="birthdayMusic" loop>
+    <source src="birthdaymusic.mp3" type="audio/mp3">
+</audio>
+
+
+button{
+
+padding:15px 35px;
+border:none;
+border-radius:30px;
+background:#ff4081;
+color:white;
+font-size:18px;
+cursor:pointer;
+margin:10px;
+box-shadow:0 5px 15px pink;
+
+}
+
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+.panda{
+
+font-size:90px;
+animation:bounce 2s infinite;
+
+}
+
+
+
+@keyframes bounce{
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+
+
+
+/* Floating hearts */
+
+
+.heart{
+
+position:absolute;
+color:#ff4d88;
+animation:fall linear infinite;
+
+}
+
+
+
+@keyframes fall{
+
+from{
+top:-50px;
+}
+
+to{
+top:100vh;
+}
+
+}
+
+
+
+
+/* Surprise Box */
+
+
+.box{
+
+width:160px;
+height:130px;
+background:#ff4081;
+border-radius:15px;
+position:relative;
+cursor:pointer;
+display:flex;
+justify-content:center;
+align-items:center;
+animation:shake 1s infinite;
+
+}
+
+
+
+.ribbon{
+
+position:absolute;
+width:30px;
+height:130px;
+background:#ffd700;
+
+}
+
+
+
+.toy{
+
+font-size:70px;
+opacity:0;
+position:absolute;
+transition:1s;
+transform:translateY(30px);
+
+}
+
+
+
+.openBox .toy{
+
+opacity:1;
+transform:translateY(-100px);
+
+}
+
+
+.openBox{
+
+animation:none;
+
+}
+
+
+
+@keyframes shake{
+
+25%{
+transform:rotate(5deg);
+}
+
+75%{
+transform:rotate(-5deg);
+}
+
+}
+
+
+
+
+
+/* Birthday card */
+
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:25px;
+width:80%;
+max-width:600px;
+box-shadow:0 0 25px pink;
+
+}
+
+
+
+.friendPhoto{
+
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:50%;
+border:7px solid #ff8fab;
+box-shadow:0 0 20px pink;
+animation:photo 2s;
+
+}
+
+
+
+@keyframes photo{
+
+from{
+
+transform:scale(0);
+
+}
+
+to{
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<script>
+
+for(let i=0;i<35;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.fontSize=
+(15+Math.random()*25)+"px";
+
+
+h.style.animationDuration=
+(3+Math.random()*5)+"s";
+
+
+document.body.appendChild(h);
+
+}
+function playMusic(){
+
+let music=document.getElementById("birthdayMusic");
+
+music.play();
+
+}
+</script>
+
+
+
+
+
+<!-- PAGE 1 -->
+
+
+<div class="page active" id="page1">
+
+
+<div class="box" onclick="openBox()">
+
+
+<div class="ribbon"></div>
+
+
+<div class="toy">
+
+🐼💗
+
+</div>
+
+
+</div>
+
+
+
+<p id="boxText">
+
+Tap the surprise box 🎁
+
+</p>
+
+
+
+<h1>
+Someone Special Has A Surprise 💝
+</h1>
+
+
+
+<div class="panda">
+🐼
+</div>
+
+
+
+<button onclick="nextPage(2)">
+
+Open Surprise ✨
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- PAGE 2 -->
+
+
+<div class="page" id="page2">
+
+
+<div class="panda">
+
+🐼💕
+
+</div>
+<div class="card">
+
+
+<h1>
+Happy Birthday Keerthi 💖
+</h1>
+
+
+<p>
+
+You are my amazing best friend 💕
+
+<br><br>
+
+Thank you for all the beautiful memories,
+laughs and happiness.
+
+<br><br>
+
+May your birthday bring endless smiles,
+love and joy ✨
+
+</p>
+
+
+</div>
+
+
+
+<button onclick="nextPage(3)">
+
+Next Surprise 🎂
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function openBox(){
+
+document.querySelector(".box")
+.classList.add("openBox");
+
+
+document.getElementById("boxText")
+.innerHTML=
+"🐼 Cute panda toy appeared 💖";
+
+
+}
+
+
+
+
+function nextPage(num){
+
+
+document.querySelectorAll(".page")
+.forEach(function(p){
+
+p.classList.remove("active");
+
+});
+
+
+document.getElementById("page"+num)
+.classList.add("active");
+
+
+}
+
+
+
+</script>
+<!-- PAGE 3 : CAKE -->
+
+
+<div class="page" id="page3">
+
+
+<h1>
+Birthday Cake Time 🎂
+</h1>
+
+
+<div class="cake">
+
+
+<div class="candle" id="candle1">
+<div class="flame"></div>
+</div>
+
+
+<div class="candle" id="candle2">
+<div class="flame"></div>
+</div>
+
+
+<div class="candle" id="candle3">
+<div class="flame"></div>
+</div>
+
+
+
+<div class="cakeTop"></div>
+
+<div class="cakeMiddle"></div>
+
+<div class="cakeBottom"></div>
+
+
+
+</div>
+
+
+
+<p id="wishText">
+
+Close your eyes, make a wish and blow the candles 🕯️✨
+
+</p>
+
+
+
+<button onclick="blowCandles()">
+
+Blow Candles 💨
+
+</button>
+
+
+
+<button onclick="nextPage(4)">
+
+Play Game 🎮
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<style>
+
+
+.cake{
+
+position:relative;
+width:260px;
+height:230px;
+margin:30px;
+
+}
+
+
+
+
+.cakeBottom{
+
+position:absolute;
+bottom:0;
+width:260px;
+height:80px;
+background:#ff8fab;
+border-radius:20px;
+
+}
+
+
+
+
+.cakeMiddle{
+
+position:absolute;
+bottom:70px;
+left:25px;
+width:210px;
+height:65px;
+background:#ffc2d1;
+border-radius:20px;
+
+}
+
+
+
+
+
+.cakeTop{
+
+position:absolute;
+bottom:125px;
+left:55px;
+width:150px;
+height:50px;
+background:#fff0f3;
+border-radius:20px;
+
+}
+
+
+
+
+.candle{
+
+position:absolute;
+bottom:175px;
+width:18px;
+height:45px;
+background:#ffd166;
+border-radius:5px;
+z-index:5;
+
+}
+
+
+
+
+.candle:nth-child(1){
+
+left:65px;
+
+}
+
+
+
+.candle:nth-child(2){
+
+left:125px;
+
+}
+
+
+
+.candle:nth-child(3){
+
+left:185px;
+
+}
+
+
+
+
+
+.flame{
+
+width:15px;
+height:25px;
+background:#ff9500;
+border-radius:50%;
+position:absolute;
+top:-25px;
+left:2px;
+animation:flicker .5s infinite;
+
+}
+
+
+
+@keyframes flicker{
+
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+
+}
+
+
+
+.off .flame{
+
+display:none;
+
+}
+
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+function blowCandles(){
+
+
+document.getElementById("candle1")
+.classList.add("off");
+
+
+document.getElementById("candle2")
+.classList.add("off");
+
+
+document.getElementById("candle3")
+.classList.add("off");
+
+
+
+document.getElementById("wishText")
+.innerHTML=
+"🎉 Yay! Your wish has been sent to the stars ✨💖";
+
+
+
+for(let i=0;i<25;i++){
+
+
+let star=document.createElement("div");
+
+
+star.innerHTML="✨";
+
+
+star.style.position="absolute";
+
+star.style.left=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+star.style.fontSize="30px";
+
+
+document.body.appendChild(star);
+
+
+
+setTimeout(()=>{
+
+star.remove();
+
+},2000);
+
+
+
+}
+
+
+}
+
+
+</script>
+<!-- PAGE 4 : MINI GAME -->
+
+
+<div class="page" id="page4">
+
+
+<h1>
+🐼 Heart Catch Game 💖
+</h1>
+
+
+<p>
+Help the panda collect 10 hearts!
+</p>
+
+
+
+<div id="gameArea">
+
+
+<div id="playerPanda">
+🐼
+</div>
+
+
+
+<div id="score">
+
+Score : 0
+
+</div>
+
+
+
+</div>
+
+
+
+<p id="gameStatus">
+
+Catch the falling hearts ✨
+
+</p>
+
+
+
+<button onclick="startGame()">
+
+Start Game 🎮
+
+</button>
+
+
+
+<button onclick="nextPage(5)">
+
+Open Gift 🎁
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<style>
+
+
+#gameArea{
+
+width:90%;
+max-width:500px;
+height:350px;
+background:white;
+border:5px solid #ffb6c1;
+border-radius:25px;
+position:relative;
+overflow:hidden;
+
+}
+
+
+
+#playerPanda{
+
+position:absolute;
+bottom:5px;
+left:220px;
+font-size:65px;
+transition:.2s;
+
+}
+
+
+
+#score{
+
+position:absolute;
+top:10px;
+left:15px;
+background:#fff;
+padding:10px 20px;
+border-radius:20px;
+color:#ff4081;
+font-size:20px;
+
+}
+
+
+
+
+.fallingHeart{
+
+position:absolute;
+font-size:35px;
+animation:heartFall 4s linear;
+
+}
+
+
+
+
+@keyframes heartFall{
+
+
+from{
+
+top:-40px;
+
+}
+
+
+to{
+
+top:350px;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+
+
+
+
+<script>
+
+
+let score=0;
+
+let running=false;
+
+
+
+function startGame(){
+
+
+score=0;
+
+running=true;
+
+
+document.getElementById("score")
+.innerHTML="Score : 0";
+
+
+
+let area=document.getElementById("gameArea");
+
+
+
+let timer=setInterval(()=>{
+
+
+if(!running){
+
+clearInterval(timer);
+
+return;
+
+}
+
+
+
+let heart=document.createElement("div");
+
+
+heart.className="fallingHeart";
+
+
+heart.innerHTML="💖";
+
+
+heart.style.left=
+Math.random()*430+"px";
+
+
+
+area.appendChild(heart);
+
+
+
+let check=setInterval(()=>{
+
+
+
+let panda=
+document.getElementById("playerPanda")
+.getBoundingClientRect();
+
+
+
+let h=
+heart.getBoundingClientRect();
+
+
+
+
+if(
+
+h.bottom>panda.top &&
+h.left<panda.right &&
+h.right>panda.left
+
+){
+
+
+
+score++;
+
+
+document.getElementById("score")
+.innerHTML=
+"Score : "+score;
+
+
+
+heart.remove();
+
+clearInterval(check);
+
+
+
+if(score>=10){
+
+
+running=false;
+
+
+document.getElementById("gameStatus")
+.innerHTML=
+"🎉 Amazing! Gift unlocked 🎁";
+
+
+}
+
+
+
+}
+
+
+
+},100);
+
+
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},4000);
+
+
+
+},700);
+
+
+
+}
+
+
+
+
+document.addEventListener("mousemove",
+function(e){
+
+
+
+let panda=
+document.getElementById("playerPanda");
+
+
+let area=
+document.getElementById("gameArea")
+.getBoundingClientRect();
+
+
+
+let x=e.clientX-area.left;
+
+
+
+if(x>0 && x<area.width-70){
+
+
+panda.style.left=x+"px";
+
+
+}
+
+
+});
+
+
+
+</script>
+<!-- PAGE 5 : FINAL GIFT -->
+
+
+<div class="page" id="page5">
+
+
+<div class="panda">
+🐼🎀
+</div>
+
+
+<h1>
+Your Final Surprise 💖
+</h1>
+
+
+<p>
+Tap the gift box to open it 🎁
+</p>
+
+
+
+<div class="finalGift" onclick="openFinalGift()">
+
+
+
+<div class="giftLid"></div>
+
+
+
+<div class="giftBoxBody">
+
+
+<div class="pinkToy" id="pinkToy">
+
+🧸💗
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<p id="giftMessage">
+
+A cute gift is waiting for you ✨
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<style>
+
+
+.finalGift{
+
+width:180px;
+height:150px;
+position:relative;
+cursor:pointer;
+margin:30px;
+animation:shakeGift 1s infinite;
+
+}
+
+
+
+
+.giftBoxBody{
+
+position:absolute;
+bottom:0;
+width:180px;
+height:110px;
+background:#ff69b4;
+border-radius:15px;
+
+}
+
+
+
+.giftLid{
+
+position:absolute;
+top:0;
+width:180px;
+height:35px;
+background:#ff1493;
+border-radius:15px;
+z-index:3;
+transition:1s;
+
+}
+
+
+
+.giftLid:after{
+
+content:"";
+position:absolute;
+left:75px;
+width:30px;
+height:35px;
+background:#ffd700;
+
+}
+
+
+
+
+
+.pinkToy{
+
+position:absolute;
+font-size:80px;
+left:50px;
+top:20px;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+
+}
+
+
+
+
+.opened .giftLid{
+
+transform:translateY(-90px)
+rotate(-20deg);
+
+}
+
+
+
+
+.opened .pinkToy{
+
+opacity:1;
+transform:translateY(-130px);
+
+}
+
+
+
+
+@keyframes shakeGift{
+
+
+25%{
+
+transform:rotate(5deg);
+
+}
+
+
+75%{
+
+transform:rotate(-5deg);
+
+}
+
+
+}
+
+
+
+
+.magicHeart{
+
+position:absolute;
+font-size:30px;
+animation:magic 2s linear;
+
+}
+
+
+
+@keyframes magic{
+
+
+from{
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+
+to{
+
+transform:translateY(-200px);
+opacity:0;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+<script>
+
+
+
+function openFinalGift(){
+
+
+let gift=
+document.querySelector(".finalGift");
+
+
+gift.classList.add("opened");
+
+
+
+document.getElementById("giftMessage")
+.innerHTML=
+
+`
+💖 Surprise Opened 💖
+<br><br>
+
+A cute  teddy toy for you 🧸💕
+<br><br>
+
+Happy Birthday Keerthi ✨🐼
+
+`;
+
+
+
+
+
+for(let i=0;i<50;i++){
+
+
+let heart=document.createElement("div");
+
+
+heart.className="magicHeart";
+
+
+heart.innerHTML=
+["💖","💕","✨","⭐"]
+[Math.floor(Math.random()*4)];
+
+
+
+heart.style.left=
+Math.random()*100+"%";
+
+heart.style.top=
+Math.random()*80+"%";
+
+
+
+document.body.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},2000);
+
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
